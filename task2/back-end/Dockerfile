@@ -7,4 +7,4 @@ RUN pip3 install flask
 WORKDIR /app
 COPY . .
 EXPOSE 5252
-CMD [ "python3", "./api.py" ]
+CMD [ "python3", "api.py" ]

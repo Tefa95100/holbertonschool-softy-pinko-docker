@@ -1,0 +1,22 @@
+services:
+  back-end:
+    build: ./back-end
+    ports:
+      - "5252:5252"
+  
+  front-end:
+    build: ./front-end
+    container_name: Front
+    ports:
+      - "9000:9000"
+    depends_on:
+      - back-end
+  
+  proxy:
+    build: ./proxy
+    container_name: proxy
+    ports:
+      - "80:80"
+    depends_on:
+    - front-end
+    - back-end
